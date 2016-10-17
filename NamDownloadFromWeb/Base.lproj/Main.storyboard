@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,8 +18,61 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EG6-N6-PBq">
+                                <rect key="frame" x="20" y="20" width="560" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="5Vp-Ax-ekg"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Abj-Cg-fIL">
+                                <rect key="frame" x="20" y="280" width="560" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="oFO-jV-L1n"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kcU-4X-0mG">
+                                <rect key="frame" x="247" y="540" width="106" height="40"/>
+                                <state key="normal" title="Start Download"/>
+                                <connections>
+                                    <action selector="Actionstart:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RqF-9l-zWC"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="9Kt-ad-yxF">
+                                <rect key="frame" x="282" y="382" width="37" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="9Kt-ad-yxF" secondAttribute="height" multiplier="1:1" id="iY0-9W-wF5"/>
+                                </constraints>
+                                <color key="color" red="1" green="0.14177834019999999" blue="0.23339536920000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Dcs-9w-Blm">
+                                <rect key="frame" x="282" y="121" width="37" height="37"/>
+                                <color key="color" red="1" green="0.12542052840000001" blue="0.098280702420000005" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Abj-Cg-fIL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="2DB-dC-Pfi"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="kcU-4X-0mG" secondAttribute="bottom" constant="20" id="4IG-bf-QdX"/>
+                            <constraint firstItem="kcU-4X-0mG" firstAttribute="top" secondItem="Abj-Cg-fIL" secondAttribute="bottom" constant="20" id="AC7-AF-7FK"/>
+                            <constraint firstItem="Abj-Cg-fIL" firstAttribute="top" secondItem="EG6-N6-PBq" secondAttribute="bottom" constant="20" id="EHs-xM-Xe3"/>
+                            <constraint firstItem="Dcs-9w-Blm" firstAttribute="centerX" secondItem="EG6-N6-PBq" secondAttribute="centerX" id="FsJ-eI-BtM"/>
+                            <constraint firstItem="EG6-N6-PBq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="R4L-Gb-FEl"/>
+                            <constraint firstItem="9Kt-ad-yxF" firstAttribute="centerX" secondItem="Abj-Cg-fIL" secondAttribute="centerX" id="XKw-aK-4gs"/>
+                            <constraint firstItem="9Kt-ad-yxF" firstAttribute="centerY" secondItem="Abj-Cg-fIL" secondAttribute="centerY" id="af3-eF-GYo"/>
+                            <constraint firstItem="kcU-4X-0mG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cQ3-Km-U0x"/>
+                            <constraint firstItem="EG6-N6-PBq" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="qBb-Pw-Lfz"/>
+                            <constraint firstItem="EG6-N6-PBq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rrh-TH-CdI"/>
+                            <constraint firstItem="Dcs-9w-Blm" firstAttribute="centerY" secondItem="EG6-N6-PBq" secondAttribute="centerY" id="sKW-Rc-sPJ"/>
+                            <constraint firstItem="Abj-Cg-fIL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tZf-TI-zQu"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="ImageView1" destination="EG6-N6-PBq" id="iGz-zp-Z3G"/>
+                        <outlet property="ImageView1ActivityInadicator" destination="Dcs-9w-Blm" id="kYk-V1-ML1"/>
+                        <outlet property="ImageView2ActivityIndicator" destination="9Kt-ad-yxF" id="s09-KK-gKq"/>
+                        <outlet property="Imageview2" destination="Abj-Cg-fIL" id="BQz-j3-Sup"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
